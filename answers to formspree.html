@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Share Your Answers | Joseph Lynch</title>
+<style>
+  :root { --ink:#1f2933; --muted:#52606d; --accent:#0b6e75; --bg:#f7f5f0; --card:#ffffff; --line:#e4e1d9; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:Georgia, "Times New Roman", serif; line-height:1.65; }
+  .hero { height:200px; background:url("sunset.jpg") center 40% / cover no-repeat; position:relative; }
+  .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(247,245,240,.9) 100%); }
+  main { position:relative; z-index:1; max-width:760px; margin:-80px auto 48px; padding:40px 56px 48px; background:var(--card); border:1px solid var(--line); border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
+  h1 { font-size:1.8rem; margin:0 0 6px; }
+  .sub { color:var(--muted); margin:0 0 28px; font-family:Helvetica, Arial, sans-serif; font-size:.95rem; }
+  fieldset { border:none; padding:0; margin:0 0 8px; }
+  .row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  label { display:block; font-family:Helvetica, Arial, sans-serif; font-size:.9rem; font-weight:bold; margin:20px 0 6px; }
+  label .opt { font-weight:normal; color:var(--muted); }
+  .q { font-family:Georgia, serif; font-weight:normal; font-size:1rem; color:var(--ink); }
+  .q b { color:var(--accent); font-family:Helvetica, Arial, sans-serif; margin-right:6px; }
+  input, textarea { width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:6px; font:inherit; font-size:1rem; background:#fff; color:var(--ink); }
+  textarea { min-height:110px; resize:vertical; }
+  input:focus, textarea:focus { outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent); }
+  button { margin-top:28px; background:var(--accent); color:#fff; border:none; border-radius:6px; padding:12px 28px; font-family:Helvetica, Arial, sans-serif; font-size:1rem; font-weight:bold; cursor:pointer; }
+  button:hover { filter:brightness(1.1); }
+  .note { margin-top:18px; color:var(--muted); font-family:Helvetica, Arial, sans-serif; font-size:.85rem; }
+  .hp { position:absolute; left:-9999px; }
+  a { color:var(--accent); }
+  @media (max-width:640px) {
+    main { margin:-60px 12px 24px; padding:28px 18px 32px; }
+    .row { grid-template-columns:1fr; gap:0; }
+  }
+</style>
+</head>
+<body>
+<div class="hero" role="img" aria-label="Sunset over the ocean on Oahu"></div>
+<main>
+  <h1>Share Your Answers</h1>
+  <p class="sub">Thank you for taking a few minutes. Answer as many or as few as you like. Short answers are welcome.</p>
+
+  <!-- STEP FOR JOSEPH: replace YOUR_FORM_ID below with the ID Formspree gives you -->
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input type="hidden" name="_subject" value="New answers from josephmlynch.com">
+    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+
+    <fieldset>
+      <div class="row">
+        <div>
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div>
+          <label for="role">Your role <span class="opt">(optional)</span></label>
+          <input id="role" name="role" type="text">
+        </div>
+      </div>
+      <label for="email">Your email <span class="opt">(so I can reply)</span></label>
+      <input id="email" name="email" type="email" required>
+    </fieldset>
+
+    <label for="q1" class="q"><b>1</b>How is the Hawaii team being built out, and how large do you expect it to be?</label>
+    <textarea id="q1" name="Q1 Hawaii team build-out"></textarea>
+
+    <label for="q2" class="q"><b>2</b>Will the wellness role work with Mosaic's existing individual and business clients, or mainly with retirement plan participants?</label>
+    <textarea id="q2" name="Q2 Wellness role scope"></textarea>
+
+    <label for="q3" class="q"><b>3</b>Beyond the fundamentals of our industry, how do you view success?</label>
+    <textarea id="q3" name="Q3 Success"></textarea>
+
+    <label for="q4" class="q"><b>4</b>What pitfalls or warning signs would you like us to be aware of in this role?</label>
+    <textarea id="q4" name="Q4 Pitfalls"></textarea>
+
+    <label for="other" class="q"><b>+</b>Anything else you'd like me to know?</label>
+    <textarea id="other" name="Anything else"></textarea>
+
+    <button type="submit">Send answers</button>
+    <p class="note">Your answers go straight to my inbox. Prefer email? Write to me at <a href="mailto:josephmlynch@gmail.com">josephmlynch@gmail.com</a>.</p>
+  </form>
+</main>
+</body>
+</html>
